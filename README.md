@@ -26,35 +26,39 @@ Un simulador interactivo desarrollado en Python con Gradio para realizar proyecc
 
 * **Formato de Moneda:** Formateo automático a pesos colombianos (COP).
 
-## Tecnologías Utilizadas
+## Estructura del Repositorio
 
-* **Python 3.x**
-* **Gradio** (Interfaz web interactiva)
-* **CSV** (Módulo estándar para manejo e impresión de archivos CSV)
+* `simulador_cdt.ipynb`: Notebook ejecutable con el código fuente del simulador e interfaz Gradio.
+* `README.md`: Documentación del proyecto.
 
-## Instalación y Requisitos
+## Requisitos e Instalación
 
-1. **Clonar el repositorio:**
-   ```bash
-   git clone https://github.com/tu-usuario/simulador-cdt.git
-   cd simulador-cdt
-   ```
+### Requisitos previos
 
-2. **Instalar dependencias:**
-   Asegúrate de tener instalada la librería `gradio`:
-   ```bash
-   pip install gradio
-   ```
+* Python 3.x
+* Jupyter Notebook, JupyterLab o entorno compatible (Google Colab, VS Code).
+
+### Instalación de dependencias
+
+Asegúrate de instalar la librería `gradio` ejecutando en tu terminal o celda del notebook:
+
+```bash
+pip install gradio
+```
 
 ## Uso
 
-Ejecuta el script principal o corre la celda en Google Colab / Jupyter Notebook:
+1. Abre el notebook principal:
 
 ```bash
-python main.py
+jupyter notebook simulador_cdt.ipynb
 ```
 
-Al ejecutarse, Gradio generará una interfaz web local (y una URL pública temporal si ejecutas desde Google Colab) para interactuar con la herramienta.
+*(También puedes abrirlo directamente en Google Colab o VS Code).*
+
+2. Ejecuta la celda principal dentro del archivo `simulador_cdt.ipynb`.
+
+3. Al ejecutarse, Gradio desplegará la interfaz gráfica (localmente o mediante un enlace público de Gradio si utilizas Colab) para interactuar con la herramienta.
 
 ### Interfaz de la Aplicación
 
