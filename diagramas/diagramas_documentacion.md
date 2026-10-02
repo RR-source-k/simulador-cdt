@@ -1,0 +1,79 @@
+# Documentación UML - Simulador y Proyector Financiero de CDT
+
+Este documento contiene los diagramas UML que modelan la arquitectura, el comportamiento y la interacción del sistema de proyección financiera de Certificados de Depósito a Término (CDT).
+
+---
+
+## 1. Diagramas Estructurales
+
+### 1.1 Diagrama de Clases
+Muestra la organización del sistema en tres capas (Reglas, Presentación y Datos) y sus relaciones de dependencia.
+![Diagrama de Clases](https://www.plantuml.com/plantuml/png/bLFDQjmm4BxxAKHwiMa8BIKjcB14-8Sk9F5YkuMUp5HIZAWi6Ka-D2KFLVe8UR5ARDV8k-xI-ZOpdxxvvflnhR6WxJI8A1g1V8EUeOiCHa2K8Srw0UO2lSglo-lY7VeH8VSHbpCeoriV__bU8qvJnAKDCeEILgNeKIW8qwE09tMCjM3W56f0KDKzSWdYj6YL1T4v6gQPOMQbaLRV6I5SoHJTSHEMdFWu2M82Wam2T0i6uYIaMjPtCsMS1AJFqVEAUwFN9IqG_l9BEXDBd7_0RnOcxcQ8aWitcI5CWkRAd6Zdj2DgycCVcnYoBSQ3bvz0kIuEf76ucijW8swencek-r2Au0EN4BpczAzW87O2mPzMu9VeVxhsJ38T6ivCVBvX2ry5_CDQA5ZbRneN-VloxVAcbJGMdBLciOoogky_tU6knGrUaO3hxEFsSzKLJLOyu7fRDMT0kxhwKcJPjdee0jX1x5x6FV33DRY_o0LnuekBOxcwslWhHYcwkPaCssmYzsgV3d5preFd81pK4n0NJiA2TZJHBPDq6iHl)
+
+### 1.2 Diagrama de Objetos
+Representa instancias concretas de la clase `CDT` con datos de entrada (monto y plazo) para diferentes escenarios de prueba.
+![Diagrama de Objetos](https://www.plantuml.com/plantuml/png/SoWkIImgAStDuUBAJyfAJIvHK79s2L5GDbHII2nMI4ufCLIevb9Go4onKZ04qhdvUINvLWgc1c2WPm0KAiX9hCe7oXfnrQAPOGGpmmXkXX7234C3J4ECJ30CCOOPOWmtn1XXY36c6MOW8nnIyrA0dW80)
+
+---
+
+## 2. Diagramas de Comportamiento (Estructurados)
+
+### 2.1 Constructor `CDT()`
+Inicialización secuencial de los atributos del objeto CDT con valores por defecto.
+![Constructor CDT](https://www.plantuml.com/plantuml/png/NSmvJWKn3CRnFgUmfe86iLCXZGH7e4DeP2O1B2NsAFOKW3W4Dm2n7EoTv2qfCY-T9V_-Nw-6sUOKdSa49l0ePfB0KmwZaR1psmFvEGReRcxl3WuxG8M4nF3k01RVrUSNs0lf4NcuXkETqvFMV1UJX4qgEzrdnKmHtnRch9twASnGiQhpLlqMfHYz34_462k-QF5VmIQ6SI2sa8C6hS5b6_oNOCho6iQHX3Vs_g7WA_VXN1_Opock0G00)
+
+### 2.2 Método `calcularTasa()`
+Algoritmo lineal para determinar la tasa de interés mensual basada en el plazo.
+![calcularTasa](https://www.plantuml.com/plantuml/png/SoWkIImgAStDuU8gIaqkISnBpqbLK4fEp4akpKai2aaiJjJGL598B5R8JSpCKwZcKb10KlPeuWA54g0I1Li50pq30qCpIrC5BOMIZCnYlOASnAfy1MsGkAM5CTY4OaDqtGiXQg56W2Y8GYDqXOiKNFr2WbpT7OCWEX1AZRbgkRWSKlDIW5u00000)
+
+### 2.3 Método `calcularProyeccion()`
+Lógica de interés compuesto que itera mes a mes para generar el saldo final y los intereses acumulados.
+![calcularProyeccion](https://www.plantuml.com/plantuml/png/NP3DIWCn58NtUOfBLwrAdQcwAHJgehWJAUv4v9A96iXFI38BBVCGle6AlfXFucHkEvt9RYPytqdEMOU8FjPQCUO5ZsXUb809HyLhXVxEspV1kRHcEfi01j0e3UmOm03--_Y4Y06VAi6bHWKhYAyopDCPd4DP59qQobpx0jVdjzB3JekmXE8Cf8d2xxy3giekAL5R4stpI76BFEwRM5WDO48lnYWyMm_jNIrPGhI4EuNlX2jhNTTn9D6RaaEtd8mwTs9QhSmzeW_MwQ5RBonouRZ979qJffgcNVfHzeiqipuXjMloCNwerMZWum_DSfbBlx2vlTzkRgwtPEV25MiOMxTFghNw1m00)
+
+### 2.4 Método `format_cop()`
+Algoritmo de formateo de números a moneda colombiana (COP).
+![format_cop](https://www.plantuml.com/plantuml/png/SoWkIImgAStDuU8gIaqkISnBpqbLK4hBByfDB8bFpY_GA4lCoI_IL598B5R8JSpCKwZcKb10KlbeuW85YEfy1Lk5j1WbbMgm3YiTFQEqsXWbiCPYGtHD2n6QO2ozejI2dCJaL8qO9HqWKeXHYeXHqeJeDqBNlmYlVZs8VXsuVcDq_Olnwe-0wDU3wpT1rxz4mTKl9CZLtJ48fXsYq9IhbelB8JKl1HYY0000)
+
+### 2.5 Método `añadirEscenario()`
+Validación de datos de entrada y creación de un nuevo escenario en la lista.
+![añadirEscenario](https://www.plantuml.com/plantuml/png/ZPAzJlCm58PtNyMhV4i_WIfIe2mjway34mM5ZfKgOn-XI8bTx6G0r94PiI86Vk02sDYvazu0jq0Qjr8J8SHcIy_ZzzKvxjYKcpHBOiOCYPIhyvZWySztBYCJM46AcqZN4grIlObfpA_qVm_S8k6HmZK3rZISHYX8jDhOAZ3X5r092uFHSJZiXXXxy_l7huzR71MIf3E29OE4Nsg3YumWoEYnLxnaVFph1eFcWS-0MJbuVlUKPxjwQC67NfwL1bcGIiberwVnbpudkRpMn_dORyDVbMdyLkOPGgPeG_1OP34ta_pwmmZjTbLyMOZrIEPk92T2PujWn-vKsTSrfCHZ0xvpTglE6sYrKbldqoafMSiJbtMQPHp1S1G6Xsuk3pVe3qPm7qEkTcBtyZ7qWbw_oMQCTKZ9B8c_0G00)
+
+### 2.6 Método `eliminarEscenario()`
+Lógica para filtrar y remover un escenario existente por su ID.
+![eliminarEscenario](https://www.plantuml.com/plantuml/png/NP0zJiD048NxFSN3DD0W1L0wI_dnWj8OoRWZ2AtiIJIIFPPs71gKCo1QgWGkGSzDSW6kW74IbBZQOh_vvhqPQErylIWBOpnbjPDvGGYeu9B5UQiPDGzNPvm_aMRd0PoYT2nuCS31nEPjXNl65WCfuagefRDUonxHYKtladYOO1fitbS_Nw-OoDoJEYm4amZFt-k2yseQj0RVm-dGHlsRdW6MtRth_T8GBFLHKBtimX-WVIL5Y0V2hF8Wi1n-y0nqmJbEmftxSQkxwke-OUCqiRTjaxyQuoZ5xdZ_yVMwYJ-oet7VB8qPaEJDkNy1)
+
+### 2.7 Método `actualizarEscenario()`
+Validación, búsqueda y reemplazo de un escenario existente con nuevos valores.
+![actualizarEscenario](https://www.plantuml.com/plantuml/png/ZPFBQXH158Rt_HG_uoP243iPHeMCv3AjPE4exIm3uQJw40gggs9TWaQoT2U8Mr4mtX_1lMyoB-0hQ5NXjDD2utBWVEV__ZhJkywJzQ5LHM5PUDAdYZ4YuGCfUK6sSe8rMMasP7FCJcoYDTgRJPmfkZ3NHo27bgJ6ymBuQmCUIsG2x30tcjEeADFWscXTBHxMyxqQHwFbc_S_lx_2eJwrx0X1ut26ynzNIZRcQ9Gss1BNzghPv5vP09VheSlNLp4t6M9dYfivS-j_CXyagE4JXcEBbfuPYoU18TYkihU6iZ_4xFGis4490srYTzQUhSacsuCcKUDHv3kD3EFk5EKVX-qXXuyGZSSK9y49iZWp5laAYNNZ_lodw1oHwFfKEizPT3pyPEzUniD4HWkZlQNkFECXlS_GWS_DSPOKf4HGPEFFZN__LcxInxzq-0tPOBhMxLP_-YjgvZOk99iw2gEx1HcwtOU-ePelwkf-xlds1Gvc2wm-XrLDT-TtpVrg_s1IN1R5BkicjEeN)
+
+---
+
+## 3. Diagramas de Interacción (Secuencia)
+
+### 3.1 Secuencia: `añadirEscenario()`
+Interacción entre el Usuario, Main, Presentación y la Lista de escenarios al crear un nuevo CDT.
+![Secuencia Añadir](https://www.plantuml.com/plantuml/png/ZP31IWCn48RlUOfXUwbWGP1UbheKRJrLwA4-m92D6aao8Pc8-ZOUFOgFi2zccgrBMx2uXoNa-_BFyCyZO-1aZH0ecGBSnuH14s2497ncMcgFZg6guGwrgxR47fDrK54vHgcfD_oX8LkkuMQnAKp2Q36zdIul3nqLfNBRsR66bOvSN9CF2AELVdpYQvEK40ac3LYeOJR3xWjR7PQ_3yUM7DCvU8FlTDOqmcvT_pzNe66eoYtChk02g6UWtKltONHBbO3yUPWC2rZb8ZuhK25GQ9h2RU6fvnGvO1YuCb51rI9JX5re758RaELHhccS5pg-bcXaCXWs6F4KNmTwKr9gSeCbOJBq85k6dThIVaffkYZelNBjE9kxW9xjXv1xqC6YrDstoyvVlNIVhvhfH377GNck4FFyJzRy0000)
+
+### 3.2 Secuencia: `eliminarEscenario()`
+Flujo de interacción para la eliminación de un escenario validando su ID.
+![Secuencia Eliminar](https://www.plantuml.com/plantuml/png/XO-zIWKn48NxFCMmDbhi2ooNS14jXAlOMCkGdQiZ-Lbc4X7VnjBQHzWNCxl11GMr2Hc-SywSsMj6oILuOz3b972d1OKJe48nKsNiUCAOeHlW6Zbs2ma_oQsGKipeE3N5z5r1wYWkkJh0WJMl6by_22S7VdZCvxwGCGLw2m46sEt8S-1gkVnodl9uNsFEh3LXaKt_oWpwkhhDG0etAL9d0A1w-srHeAZuH40YIQnTULXvQJnf5fIDarU2xke2dkStpsFQ4cqxQ3KTsQ-cAGcq0YqPcgJV-hSPNIxe-HL7jFRNXlFx2-VqHqMNuf4beEFv8ovLusZClhub-4y0)
+
+### 3.3 Secuencia: `actualizarEscenario()`
+Flujo completo de validación, cálculo y reemplazo de un escenario existente.
+![Secuencia Actualizar](https://www.plantuml.com/plantuml/png/bP6nRXGn48PxFyNeqWGfLw4qfsWLGK8Lf1IXHiDu02FRingFev2teQJc4Ux5i7UJ4yUUEBBIkld-VyR_xyjYg5PJT0x9HE53gQX100jKDpOMA8oO3LORU8yXhpf9VvDRvSBPa8BCYd5VGTusyFRgRc849rVdxywlN-zhk13dlhjiu2OKcxGn54CukGbVljgRMDcv2ki14cpWuWB9AiRmY7hzx3qD_WoIP9Cp62C-ogjXSAbRnXTP74Q3bKUJ0Y7VRt_4uAMi7BHlXFNk2ebpmMyCh2hQV9sdYTUPIp55tN6EXP_dBgOESzp9-AaMQZxo1gCe1FyqV5QiTu6wW3D9DaKlJwBfc19qd0NueTbuNlG_4Ox5w7oECkrVJX-09cDxyzFMvo546Ab6r3iiU4npg_ATYOBaFINzKKIkV2yVoTkEBpfLvjHV61NsTOjI9NyEcf32zbTkkd_Ljltv44oEz7Pe86Vl-kyksrbJ_0q0)
+
+### 3.4 Secuencia: `generarProyecciones()`
+Iteración sobre la lista de escenarios para construir y mostrar el reporte HTML mes a mes.
+![Secuencia Proyecciones](https://www.plantuml.com/plantuml/png/VP6_QWCn38TtFuLmbtR82uHmf9qw992XdKe7uQY9Y_yOIoxaeJgKFa9UhFRbk5mQY0TpeE_toT8jMJ1ByKufD18pl7B1R2CWGr6frgon2OE0diCQRT2julzNDfcOWg2nyKIaIuBOK6XUdiFAilICgny8TokxsykJAwHKWLa77kQmMEmeKCQyoV50fcc9xn-wJlc6f9k8GdVH4hxG7B-ZLb1FWjdOGpyUVt1BS4PrZJVAzrJfAHzPCcRm51W_gHBac43lyJ19ZlPkcAj5hRG7JgX1xs9Ce3UO4GnkyGmqIty6oMmSTaJUxFjWEJKSYO-OFGfXXkUNzUgAcJue3Iix_WRmn83jlaoSjTRXr4XXUxN8lNW79lhaIEAD5QR9hwfOKwbblOjtVm00)
+
+### 3.5 Secuencia: `exportarEscenariosCSV()`
+Interacción con el sistema de archivos para guardar el resumen en formato CSV.
+![Secuencia Exportar CSV](https://www.plantuml.com/plantuml/png/XP2zhXCn48LxFyLeRmD52XgArPKLVa8Lf4W86aGnyKwIGVvPZUqey4OKL3n2NWnxip89A5mNkvREDsTypZ8cb9ITLGfD2W8VOqRX01WXgx5eR7X4dw3huJsoxwhY_bOsGf5yGiFXGeot14L3llh67jOSqyJOSa5uMFF-a5xRJBSZAER0nz33cm-V9jp48poyMhrz-Uw5KXaM6XpqyFX8fp58Gbcr7MNYsNEjbQlG-0IaqDuy48vepZz3fw2S4HPjZoCVyIi1YGJHUjBTfEUB7c8IbAQJZGJT0R_17_FcggSuTSm8eS2SLkj_WJ8jl6K1yWQtz1s74A-ukSPASY91QUiQPaCOeTkW81WSi05po79caqNhgo6V-SliSlzXExOuG-I7-g_CbTkS3lOPPS2XnhpNxld7YLFuJxqc-1sBGyFdNxvmTQDQbczszZS0)
+
+### 3.6 Secuencia: `main()`
+Flujo principal de la aplicación Gradio, manejando el bucle de interacción del usuario con las diferentes funcionalidades.
+![Secuencia Main](https://www.plantuml.com/plantuml/png/jPBFQW8n48VlUOfXJnRq1KH4AHu5eTJxi3kqWVm9amHQtwhNNdsnPbsxJ7KXbxgWXymtcU-NP1CJSihMA8LjyWolCIDh3nWXgr1gkjK1NO9c2NlKhkahzhPoO8ha4hRQ3qHGAiDY3HQMi5hPqZXxMg-LxTV2PKsq33Lbl0_Gx7LPvNxyrKIxH5papj_KA2WVcZ9pU_x2JZDGRCdrt53hFp4O1sht2ysiTydF8HWy-J9qx15YTpsI2x0ODsUAsIJilDpdKiz3QXyJ8yCjHoOID3kZhNPOIq039dHqToykqOURRzkKqUXJrHr7KDhFeNu9ilN1QOx44DX_Kjk_H8gJITx84ICV13URDg-YqlmzMLEHbcf_tyz7y9pa7KohqvNRZTZpot52lWB_wy7B09NJbrRoJEiX9FwO6AvJ_Kzjod-svWS0)
+
+---
+
+> **Nota:** Los diagramas fueron generados utilizando [PlantUML](https://plantuml.com/).
